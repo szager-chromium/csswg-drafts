@@ -69,6 +69,10 @@ Embedding document:
 <div style="height: 1000px"></div>
 ```
 
+## Related work
+
+A previous explainer for this feature is [here](https://github.com/domenic/cooperatively-sized-iframes).
+
 ## Future extensions
 
 A JavaScript API could be added in the future that would allow embedded documents to request relayout in their embedding document context. This would allow dynamically generated iframe documents to update at times other than `load`.
@@ -76,3 +80,5 @@ A JavaScript API could be added in the future that would allow embedded document
 ## Privacy and security
 
 Information about the contents of a cross-origin iframe can be exfiltrated by embedding it in a malicious document that observes the laid-out size of the iframe. This can be mitigated through use of the the `X-Frame-Options` HTTP header to allow embedding into only trusted embedding documents, plus the `responsive-embedded-sizing` `<meta>` tag to further opt into responsive layout. Additional restrictions could be put in place through contents of the `<meta>` tag that would restrict to only explicitly allowed origins.
+
+[Fenced frames](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/fencedframe) are excluded from this feature.
